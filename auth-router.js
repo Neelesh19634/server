@@ -6,7 +6,6 @@ const postModel=require('./models/Post')
 const Auth=require('./auth-middleware')
 const upload=require('./models/multer')
 const commentModel=require('./models/comment')
-
 router.get("/",(req,res)=>{
     res.json({message:"hello my name is neelesh kumar meena"})
 })
@@ -200,4 +199,14 @@ router.post("/likePost", async (req, res) => {
       res.status(500).json({ message: "Internal Server Error" });
     }
   });
+
+  router.delete("/deletePost/:id",async(req,res)=>{
+    try{
+        const id=req.params.id;
+        const data=await postModel.findByIdAndDelete(id);
+        res.status(200).json({message:"post deleted successfully"})
+    }catch(error){
+        res.status(500).json("Internal server error")
+    }
+  })
 module.exports=router

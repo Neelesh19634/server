@@ -27,6 +27,10 @@ const userSchema=new mongoose.Schema({
     type:mongoose.Schema.Types.ObjectId,
     ref:"Post"
  }],
+ story:[{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"Stories"
+ }],
  likes:[{
    type:mongoose.Schema.Types.ObjectId,
    ref:"Post"
