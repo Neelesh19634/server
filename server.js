@@ -16,11 +16,10 @@ app.use("/public", express.static("public"));
 
 app.use("/",router)
 
-connect().then(()=>{
+
 
 
     const PORT=5000;
     app.listen(PORT,()=>{
         console.log(`server is running on port ${PORT}`)
     })
-})
