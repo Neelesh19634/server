@@ -7,6 +7,8 @@ const userSchema=new mongoose.Schema({
      type:String,
      required:true
  },
+ profile:{
+    type:String},
  password:{
     type:String,
     required:true
@@ -15,26 +17,14 @@ const userSchema=new mongoose.Schema({
     type:String,
     required:true
  },
- fullname:{
-    type:String,
-    required:true
-
- },
- profile:{
-    type:String,
+ bio:{
+   type:String,
  },
  post:[{
     type:mongoose.Schema.Types.ObjectId,
     ref:"Post"
  }],
- story:[{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:"Stories"
- }],
- likes:[{
-   type:mongoose.Schema.Types.ObjectId,
-   ref:"Post"
-}]
+ 
  
  
 

@@ -1,6 +1,6 @@
 const jwt=require('jsonwebtoken')
 const userModel=require('./models/User')
-const { useReducedMotion } = require('framer-motion')
+
 
 const Auth=async (req,res,next)=>{
     const token=req.header("Authorization")

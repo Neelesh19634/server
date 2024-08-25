@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-const comment = require('./comment');
+
 const postSchema=mongoose.Schema({
     image:String,
     username:String,
@@ -12,7 +12,7 @@ const postSchema=mongoose.Schema({
         type:Date,
         default:Date.now
     },
-    caption:{
+    heading:{
         type:String,
 
     },
@@ -20,19 +20,7 @@ const postSchema=mongoose.Schema({
         type:String,
 
     },
-    comment:[{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"comment"
-    }],
-    likes:[{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"User"
-    }],
-    isLiked:{
-        type:Boolean,
-        default:false
-    }
-  
+   
 })
 
 module.exports=mongoose.model('Post',postSchema)
