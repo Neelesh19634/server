@@ -4,7 +4,7 @@ const app=express()
 const cors=require('cors')
 const connect=require('./db')
 const router=require('./auth-router')
-
+const path=require('path')
 const option={
     origin:"http://localhost:3000",
     methods: "GET,POST,PUT,DELETE,PATCH,HEAD",
